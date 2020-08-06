@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "全部助力好友",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true,
+    "usingComponents": {}
+}

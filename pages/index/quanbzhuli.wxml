@@ -1,0 +1,30 @@
+<view class="content">
+    <view class="canyu">{{'共'+num+'人参与，好友助力越多越容易中奖'}}</view>
+    <view class="qiyu-item">
+        <view class="item-left">
+            <image class="sanshi" src="../../static/bg1.png"></image>
+            <view class="qiyu-toux">
+                <image mode class="qiyu-toux" src="{{showdata.avatar}}"></image>
+            </view>
+            <view class="qiyu-name">{{showdata.username}}</view>
+        </view>
+        <view class="item-right">
+            <view class="right-item" style="border-right:1rpx solid #c9c2bd;">
+                <view class="right-name">好友助力</view>
+                <view class="num" style="{{'color:'+theme_color}}">{{help_member.length+'位'}}</view>
+            </view>
+            <view class="right-item">
+                <view class="right-name">中奖率</view>
+                <view class="num" style="{{'color:'+theme_color}}">{{'+'+help_member.length+'倍'}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="zhulihaoyou">助力好友</view>
+    <view class="qiyu-item haoyou" wx:for="{{help_member}}">
+        <view class="item-left">
+            <image mode class="qiyu-toux2" src="{{item.avatar}}"></image>
+            <view class="qiyu-name">{{item.username}}</view>
+        </view>
+        <view class="item-right"></view>
+    </view>
+</view>

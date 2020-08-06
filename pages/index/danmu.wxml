@@ -1,0 +1,6 @@
+<view class="l-barrage">
+    <view class="danmu" style="{{'top:'+item[$orig].top+'rpx'+';'+'animation:'+'mymove '+item.m0+'s linear forwards'+';'}}" wx:for="{{$root.l0}}" wx:key="index">
+        <image mode class="ima" src="{{item[$orig].image}}" style="{{'top:'+item[$orig].top+'rpx'+';'+'animation:'+'mymove '+item.m1+'s linear forwards'+';'}}"></image>
+        <text class="aon" style="{{'top:'+item[$orig].top+'rpx'+';'+'animation:'+'mymove '+item.m2+'s linear forwards'+';'}}" wx:if="{{item[$orig].display}}">{{''+item[$orig].text+''}}</text>
+    </view>
+</view>

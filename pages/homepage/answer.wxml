@@ -1,0 +1,88 @@
+<view class="content" style="{{'background-color:'+theme_color}}">
+    <view class="header flexb">
+        <view class="header-img">
+            <image mode src="{{showdata.avatar}}"></image>
+        </view>
+        <view class="header-c">
+            <view class="header-name">{{''+showdata.username+''}}</view>
+            <view class="header-tis">已经连续答对<text>{{thatindex}}</text>{{'/'+question_length+'题.'}}</view>
+        </view>
+        <view class="header-r">
+            <view class="header-nany">难易度</view>
+            <view class="flexb xinxin">
+                <image mode src="../../static/bg3.png"></image>
+                <image mode src="../../static/bg3.png"></image>
+                <image mode src="../../static/bg3.png"></image>
+                <image mode src="../../static/bg2.png"></image>
+                <image mode src="../../static/bg2.png"></image>
+            </view>
+        </view>
+    </view>
+    <view class="box" wx:if="{{index==thatindex}}" wx:for="{{question_list}}">
+        <view class="tishu">第<text>{{thatindex+1}}</text>题</view>
+        <view class="time">{{''+daojishi+''}}</view>
+        <view>
+            <view class="qingw" wx:if="{{item.type==1}}">{{''+item.question+''}}</view>
+            <view class="qingw2" wx:if="{{item.type==2}}">
+                <view class="tiankong" style="{{'border-color:'+theme_color}}">
+                    <view wx:if="{{item.question_sort!=1&&item.question_sort!='1'}}">{{item.question[0]}}</view>
+                    <block wx:else>
+                        <view class="donghua" style="{{'color:'+theme_color}}" wx:if="{{Inv!=5&&chengyukong!=''}}">{{chengyukong}}</view>
+                    </block>
+                </view>
+                <view class="tiankong" style="{{'border-color:'+theme_color}}">
+                    <view wx:if="{{item.question_sort!=2&&item.question_sort!='2'}}">{{item.question[1]}}</view>
+                    <block wx:else>
+                        <view class="donghua" style="{{'color:'+theme_color}}" wx:if="{{Inv!=5&&chengyukong!=''}}">{{chengyukong}}</view>
+                    </block>
+                </view>
+                <view class="tiankong" style="{{'border-color:'+theme_color}}">
+                    <view wx:if="{{item.question_sort!=3&&item.question_sort!='3'}}">{{item.question[2]}}</view>
+                    <block wx:else>
+                        <view class="donghua" style="{{'color:'+theme_color}}" wx:if="{{Inv!=5&&chengyukong!=''}}">{{chengyukong}}</view>
+                    </block>
+                </view>
+                <view class="tiankong" style="{{'border-color:'+theme_color}}">
+                    <view wx:if="{{item.question_sort!=4&&item.question_sort!='4'}}">{{item.question[3]}}</view>
+                    <block wx:else>
+                        <view class="donghua" style="{{'color:'+theme_color}}" wx:if="{{Inv!=5&&chengyukong!=''}}">{{chengyukong}}</view>
+                    </block>
+                </view>
+            </view>
+            <view class="cnent">
+                <view bindtap="__e" class="{{['list',Inv==idx?'list-se':'',Inv==idx&&duile?'list-seduile':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'xuandaan',[idx,'$0','$1','$2'],[ [ ['question_list','',index,'answer'] ],[ ['question_list','',index,'answer_deadline'] ],[ ['question_list','',index],['options','',idx] ] ] ] ] ] ]}}" wx:for="{{item.options}}" wx:for-index="idx" wx:for-item="ite">
+                    <block wx:if="{{idx%25==0}}">A</block>
+                    <block wx:if="{{idx%25==1}}">B</block>
+                    <block wx:if="{{idx%25==2}}">C</block>
+                    <block wx:if="{{idx%25==3}}">D</block>{{'.'+ite+''}}<block wx:if="{{Inv==idx&&duile}}">√</block>
+                    <block wx:if="{{Inv==idx&&!duile}}">×</block>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="unLottery" wx:if="{{goodLottery}}">
+        <view class="unbai">
+            <view class="fuhuo">复活</view>
+            <view class="time2 ">{{''+fuhuodao+''}}</view>
+            <view class="tishi">观看15秒视频可以复活继续答题哦~</view>
+            <view class="mianfei">{{'剩余复活机会 X '+shipinfuh+''}}</view>
+            <view class="tainan">答题太难了？你可以</view>
+            <view bindtap="__e" class="yaoqing" data-event-opts="{{[ [ 'tap',[ [ 'goscreen',['$event'] ] ] ] ]}}">免费复活</view>
+            <view bindtap="__e" class="close" data-event-opts="{{[ [ 'tap',[ [ 'goodcloseLottery',['$event'] ] ] ] ]}}">放弃复活</view>
+        </view>
+    </view>
+    <view class="unLottery" wx:if="{{showjieguo}}">
+        <view class="unbai" style="position:fixed;z-index:20;top:50%;margin-top:-250rpx;left:30rpx;">
+            <view class="daojs">恭喜获得兑换券</view>
+            <view class="time3">{{''+getnum+'个'}}</view>
+            <view bindtap="__e" class="mianfei" data-event-opts="{{[ [ 'tap',[ [ 'goback',['$event'] ] ] ] ]}}">返回首页</view>
+        </view>
+    </view>
+    <view class="unLottery" style="background:#fff;" wx:if="{{Lottery}}">
+        <view class="unbai" style="position:fixed;z-index:20;top:50%;margin-top:-250rpx;left:30rpx;">
+            <view class="daojs">倒计时</view>
+            <view class="time3">{{''+ready+''}}</view>
+            <view class="zhunb">做好准备，即将开始答题</view>
+        </view>
+    </view>
+</view>

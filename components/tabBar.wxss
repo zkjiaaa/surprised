@@ -1,0 +1,39 @@
+.item {
+    width: 20%;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 10rpx 0;
+    margin: 0;
+    height: 50px;
+}
+
+.item image {
+    width: 50rpx;
+    height: 50rpx;
+}
+
+.text {
+    font-size: 20rpx;
+    color: #333;
+}
+
+.content {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 0;
+    height: 100rpx;
+    background-color: #fff;
+    width: 100%;
+    min-height: 100rpx;
+    display: flex;
+    justify-content: space-around;
+    z-index: 999;
+}

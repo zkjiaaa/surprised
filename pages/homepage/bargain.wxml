@@ -1,0 +1,58 @@
+<view class="content" style="{{'padding:30rpx 0;background:'+theme_color}}">
+    <view class="header">
+        <view class="header-img">
+            <image mode src="{{showdata.image}}"></image>
+        </view>
+        <view class="xq">{{''+showdata.name+''}}</view>
+        <view class="gui">砍到0点券免费拿</view>
+        <view class="time" wx:if="{{timecha>0&&showdata.status==1}}">
+            <text>{{shi}}</text>:<text>{{fen}}</text>:<text>{{miao}}</text>后结束</view>
+        <view class="time" wx:if="{{showdata.status==2}}">已结束</view>
+        <view class="time" wx:if="{{showdata.status==3}}">砍价成功</view>
+        <view class="qingk" wx:if="{{showdata.status==1}}">已砍<text>{{showdata.price-showdata.remain_price}}</text>点券，还差<text>{{showdata.remain_price}}</text>点券</view>
+        <view class="progress-box" wx:if="{{showdata.status==1}}">
+            <progress active activeColor="#F67139" percent="{{showdata.percent}}" strokeWidth="6"></progress>
+        </view>
+        <view bindtap="__e" class="zaik" data-event-opts="{{[ [ 'tap',[ [ 'godingdlist',['$event'] ] ] ] ]}}" wx:if="{{showdata.status==3}}">砍价成功，请前往订单页面查看</view>
+        <view bindtap="__e" class="zaik" data-event-opts="{{[ [ 'tap',[ ['goscreen'] ] ] ]}}" wx:if="{{showdata.is_enable_self_bargin==1&&showdata.self_bargain<showdata.self_bargain_limit}}">
+            <image mode src="../../static/kanj.png"></image>{{'再砍一刀('+showdata.self_bargain+' / '+showdata.self_bargain_limit+')'}}</view>
+        <button class="lila" openType="share" wx:if="{{showdata.status==1}}">人多力量大，喊朋友帮砍</button>
+        <view class="miji" wx:if="{{showdata.status==1}}">砍价秘籍:邀请新用户，有巨额暴击哦!</view>
+    </view>
+    <view class="jilu">
+        <view class="tou">
+            <text>————</text>砍价记录<text>————</text>
+        </view>
+        <view class="flexb boxx" wx:for="{{logdata}}">
+            <view class="header-img1">
+                <image mode src="{{item.avatar}}"></image>
+            </view>
+            <view class="header-c">
+                <view class="header-name">{{''+item.username+''}}</view>
+                <view class="header-tis">感情好一刀闷</view>
+            </view>
+            <view class="header-r">{{'砍掉'+item.bargain_price+'点券'}}</view>
+        </view>
+    </view>
+    <view class="jilu" style="margin-bottom:0;">
+        <view class="tou">
+            <text>————</text>更多好货<text>————</text>
+        </view>
+        <view style="border-bottom:1rpx solid #ddd;" wx:for="{{goods_list}}">
+            <view class="box flexb">
+                <view class="box-img">
+                    <image mode src="{{item.image}}"></image>
+                </view>
+                <view class="box-r">
+                    <view class="box-name">{{''+item.name+''}}</view>
+                    <view class="flexb b-box">
+                        <view class="box-price">{{'原价 ￥'+item.price+''}}</view>
+                        <view class="box-huoq">{{''+item.sales+'人已免费拿'}}</view>
+                    </view>
+                    <view bindtap="__e" class="continue" data-event-opts="{{[ [ 'tap',[ [ 'gobargain',['$0'],[ [ ['goods_list','',index,'id'] ] ] ] ] ] ]}}">点击免费砍</view>
+                </view>
+            </view>
+        </view>
+        <view bindtap="__e" class="gengduo" data-event-opts="{{[ [ 'tap',[ [ 'gomore',['$event'] ] ] ] ]}}">查看更多好货 ></view>
+    </view>
+</view>

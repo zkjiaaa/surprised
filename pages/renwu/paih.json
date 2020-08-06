@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "月度排行榜",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "navigationBarTextStyle": "white",
+    "usingComponents": {
+        "itab-bar": "/components/tabBar"
+    }
+}

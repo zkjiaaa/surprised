@@ -1,0 +1,26 @@
+<view class="content">
+    <view class="touxiang">
+        <image mode="widthFix" src="{{img}}"></image>
+    </view>
+    <view style="width:100%;height:100vh;"></view>
+    <view class="dibu">
+        <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'goindex',['$event'] ] ] ] ]}}">
+            <view class="item-img">
+                <image mode src="../../static/index_change.png"></image>
+            </view>
+            <view class="item-name">首页</view>
+        </view>
+        <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'save',['$event'] ] ] ] ]}}">
+            <view class="item-img">
+                <image mode src="../../static/bg1.png"></image>
+            </view>
+            <view class="item-name">查看并保存</view>
+        </view>
+        <button class="item" openType="share">
+            <view class="item-img">
+                <image mode src="../../static/share.png"></image>
+            </view>
+            <view class="item-name">分享</view>
+        </button>
+    </view>
+</view>

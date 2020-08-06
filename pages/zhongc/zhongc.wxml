@@ -1,0 +1,32 @@
+<view class="content">
+    <view class="item" wx:for="{{list}}">
+        <view class="item-title">
+            <view class="user-img">
+                <image mode src="{{item.avatar}}"></image>
+            </view>
+            <view class="user-name">
+                <view class="name1">{{item.username}}</view>
+                <view class="time1">{{item.create_time}}</view>
+            </view>
+        </view>
+        <view class="item-text">
+            <view class="text-title">{{item.title}}</view>
+            <view class="{{['text-text',item.check_time==1?'active':'']}}">{{item.content}}</view>
+            <view bindtap="__e" class="text-quanb" data-event-opts="{{[ [ 'tap',[ [ 'quanbu',[index] ] ] ] ]}}" wx:if="{{item.check_time==0&&item.content.length>46}}">显示全部</view>
+            <view class="text-image">
+                <image mode bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'yulan',['$0','$1'],[ [ ['list','',index,'images'] ],[ ['list','',index],['images','',idx] ] ] ] ] ] ]}}" src="{{ite}}" wx:for="{{item.images}}" wx:for-index="idx" wx:for-item="ite"></image>
+            </view>
+            <view class="tuijgood">
+                <image mode src="{{item.goods_thumb}}"></image>
+                <view class="tuij-xx">
+                    <view class="tuij-xx1">{{item.goods_name}}</view>
+                    <view class="tuij-price" style="{{'color:'+theme_color}}">已中奖</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view style="height:80rpx;width:100%;"></view>
+    <view bindtap="__e" class="fab" data-event-opts="{{[ [ 'tap',[ [ 'fabu',['$event'] ] ] ] ]}}" style="{{'background:'+theme_color}}">中奖心得</view>
+    <view style="width:100%;height:100rpx;"></view>
+    <itab-bar bind:__l="__l" index="2" vueId="b2bd2fc0-1"></itab-bar>
+</view>

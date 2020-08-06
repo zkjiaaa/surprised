@@ -1,0 +1,77 @@
+.resultInfo1 {
+    color: #999;
+}
+
+.content {
+    background: #ececec;
+    padding-top: 40rpx;
+    min-height: 100vh;
+    padding-bottom: 50rpx;
+    box-sizing: border-box;
+}
+
+.but {
+    width: 498rpx;
+    height: 101rpx;
+    background: #f63;
+    color: #fff;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 101rpx;
+    margin-top: 75rpx;
+    margin-bottom: 49rpx;
+    border-radius: 12rpx;
+    font-size: 36rpx;
+}
+
+.item {
+    width: 568rpx;
+    height: 158rpx;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding-top: 52rpx;
+    display: flex;
+    color: #000;
+    font-size: 36rpx;
+    border-bottom: #ececec solid 2rpx;
+}
+
+.name2 {
+    font-size: 24rpx;
+    color: #999;
+}
+
+.ipt {
+    color: #000;
+    font-size: 28rpx;
+}
+
+.ipt1 {
+    color: #999;
+    font-size: 28rpx;
+}
+
+.name {
+    width: 202rpx;
+    font-size: 32rpx;
+}
+
+page {
+    background: #ececec;
+}
+
+.title {
+    margin-top: 77rpx;
+    color: #000;
+    text-align: center;
+    font-size: 44rpx;
+    margin-bottom: 40rpx;
+}
+
+.card {
+    width: 700rpx;
+    border-radius: 20rpx;
+    overflow: hidden;
+    margin: 0 auto;
+    background: #fff;
+}

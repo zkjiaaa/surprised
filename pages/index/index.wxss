@@ -1,0 +1,281 @@
+.hezi {
+    position: fixed;
+    top: 360rpx;
+    right: 20rpx;
+    width: 140rpx;
+    border-radius: 10rpx;
+    text-align: center;
+}
+
+.moreplay {
+    box-sizing: border-box;
+    padding: 10rpx;
+    color: #fff;
+    border-radius: 8rpx;
+}
+
+.hezi image {
+    width: 70rpx;
+    height: 70rpx;
+}
+
+.anniu-item {
+    width: 80rpx;
+    height: 80rpx;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 20rpx;
+    line-height: 40rpx;
+    font-size: 22rpx;
+    display: flex;
+    background: none;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+}
+
+.anniu-item::after {
+    border: none;
+}
+
+.anniu-img {
+    width: 80rpx;
+    border-radius: 50%;
+    height: 80rpx;
+}
+
+.anniu {
+    position: fixed;
+    bottom: 120rpx;
+    right: 20rpx;
+}
+
+.kefu {
+    padding: 0;
+    margin: 0;
+    width: 120rpx;
+    height: 120rpx;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    font-size: 28rpx;
+    color: #333;
+    text-align: center;
+    line-height: 120rpx;
+    border-radius: 50%;
+    position: fixed;
+    right: 30rpx;
+    bottom: 150rpx;
+}
+
+.tui-icon-class {
+    margin-right: 12rpx;
+}
+
+.tui-notice {
+    transform: translateX(100%);
+}
+
+.tui-scorll-view {
+    -webkit-box-flex: 1;
+    flex: 1;
+    line-height: 60rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #fff;
+    height: 100%;
+}
+
+.tui-animation {
+    animation: tui-rolling 12s linear infinite;
+}
+
+@-webkit-keyframes tui-rolling {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-170%);
+    }
+}
+
+@keyframes tui-rolling {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-170%);
+    }
+}
+
+.tui-icon-bg {
+    padding-left: 25rpx;
+    position: relative;
+    z-index: 10;
+}
+
+.tui-notice-board {
+    width: 700rpx;
+    z-index: 999;
+    margin: 0 auto;
+    padding-right: 25rpx;
+    box-sizing: border-box;
+    font-size: 28rpx;
+    height: 60rpx;
+    background: rgba(0,0,0,.5);
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    position: absolute;
+    margin-left: 25rpx;
+    top: 20rpx;
+    border-radius: 10rpx;
+}
+
+.drac-chakan {
+    position: absolute;
+    width: 134rpx;
+    height: 56rpx;
+    color: #fff;
+    font-size: 24rpx;
+    color: #fff;
+    background-color: #f63;
+    border-radius: 56rpx;
+    text-align: center;
+    line-height: 56rpx;
+    bottom: 40rpx;
+    right: 30rpx;
+}
+
+.drac-title {
+    position: absolute;
+    bottom: 0;
+    z-index: 10;
+    padding: 28rpx 28rpx;
+    box-sizing: border-box;
+    height: 140rpx;
+    color: #333;
+    width: 100%;
+    border-bottom-left-radius: 20rpx;
+    border-bottom-right-radius: 20rpx;
+    background: #fff;
+}
+
+.drac-title-time {
+    font-size: 28rpx;
+    margin-top: 10rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 420rpx;
+}
+
+.drac-title-item {
+    font-size: 32rpx;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 420rpx;
+}
+
+.title {
+    line-height: 70rpx;
+    font-size: 42rpx;
+    color: #333;
+}
+
+.banner {
+    width: 100%;
+    height: 360rpx;
+}
+
+.swiper-slide {
+    height: 1px;
+}
+
+.swiper-slide-active {
+    height: auto;
+}
+
+.drac-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.container999 {
+    width: 100vw;
+    font-size: 28rpx;
+    min-height: 100vh;
+    overflow: hidden;
+    color: #6b8082;
+    position: relative;
+    background-color: #f6f6f6;
+}
+
+.content111 {
+    width: 100%;
+    background: #fff;
+    box-sizing: border-box;
+    padding-bottom: 20rpx;
+    min-height: 100%;
+}
+
+.drac {
+    width: 690rpx;
+    height: 450rpx;
+    background-color: #fff;
+    overflow: hidden;
+    margin: 0 auto 42rpx auto;
+    background: none;
+    box-shadow: 0 0 5px 0 rgba(0,0,0,.1);
+    border-radius: 20rpx;
+    position: relative;
+}
+
+.nodrac {
+    width: 90%;
+    height: 200rpx;
+    margin: auto;
+    background-color: #fff;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    color: #999;
+    box-shadow: 0 0 10rpx 0 rgba(0,0,0,.1);
+    border-radius: 10rpx;
+}
+
+.nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    color: #fff;
+    width: 100%;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-align: start;
+    align-items: flex-start;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    font-size: 24rpx;
+    background-color: #fff;
+    z-index: 996;
+}
+
+.gaodu111 {
+    padding-top: 100rpx;
+}

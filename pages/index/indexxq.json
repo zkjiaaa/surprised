@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "详情",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "navigationBarTextStyle": "white",
+    "usingComponents": {
+        "l-barrage": "/pages/index/danmu"
+    }
+}

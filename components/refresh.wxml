@@ -1,0 +1,7 @@
+<view class="refreshBox" style="{{isTranform}}">
+    <view class="{{['refresh',isEnd==2?'animationSmall':'']}}" style="{{isZoom}}">
+        <view class="refreshWord" wx:if="{{isEnd==0}}">松开刷新</view>
+        <view class="refreshCirle animation" wx:if="{{isEnd==1}}"></view>
+        <image class="iconYes" src="../static/icon-yes.png" wx:if="{{isEnd==2}}"></image>
+    </view>
+</view>

@@ -1,0 +1,84 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/home/home",
+    "pages/index/index",
+    "pages/index/zhongjlist",
+    "pages/duih/duihxq",
+    "pages/zhongc/zhongc",
+    "pages/duih/duihorder",
+    "pages/index/quanbuma",
+    "pages/index/quanbzhuli",
+    "pages/index/indexxq",
+    "pages/me/mychouj",
+    "pages/me/duihlist",
+    "justother/login/login",
+    "pages/me/lingq",
+    "pages/renwu/paih",
+    "pages/renwu/renwu",
+    "pages/renwu/duih",
+    "pages/me/choujlist",
+    "pages/me/me",
+    "pages/me/wenti",
+    "pages/me/vip",
+    "pages/homepage/lingq",
+    "pages/homepage/lingq2",
+    "pages/homepage/exchange",
+    "pages/homepage/kanjlist",
+    "pages/homepage/duihlist",
+    "pages/homepage/redeemqb",
+    "pages/homepage/answer",
+    "pages/homepage/more",
+    "pages/homepage/bargain",
+    "pages/home/xq",
+    "pages/home/cate",
+    "pages/kanj/kanj",
+    "pages/kanj/yaoq"
+  ],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "uni-app"
+  },
+  "tabBar": {
+    "color": "#cdcdcd",
+    "selectedColor": "#ff6633",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "text": " ",
+        "iconPath": "static/happy.png",
+        "selectedIconPath": "static/happy.png"
+      },
+      {
+        "pagePath": "pages/renwu/duih",
+        "text": " ",
+        "iconPath": "static/happy.png",
+        "selectedIconPath": "static/happy.png"
+      },
+      {
+        "pagePath": "pages/renwu/renwu",
+        "text": " ",
+        "iconPath": "static/happy.png",
+        "selectedIconPath": "static/happy.png"
+      },
+      {
+        "pagePath": "pages/renwu/paih",
+        "text": " ",
+        "iconPath": "static/happy.png",
+        "selectedIconPath": "static/happy.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": " ",
+        "iconPath": "static/happy.png",
+        "selectedIconPath": "static/happy.png"
+      }
+    ]
+  },
+  "navigateToMiniProgramAppIdList": [
+    "wx1cb38d77732b11a6"
+  ],
+  "sitemapLocation": "sitemap44.json"
+}

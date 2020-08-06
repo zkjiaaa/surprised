@@ -1,0 +1,63 @@
+<view class="content" style="{{'background:'+theme_color}}">
+    <view class="tui-notice-board" wx:if="{{gonggaolist.length>0}}">
+        <tui-icon bind:__l="__l" color="#f54f46" name="news-fill" size="{{24}}" style="margin-left:20rpx;" vueId="1da55560-1"></tui-icon>
+        <swiper autoplay circular vertical class="tui-scorll-view" interval="3000">
+            <swiper-item class="tui-notice" wx:for="{{gonggaolist}}">
+                <view class="tui-news-item">{{item.content}}</view>
+            </swiper-item>
+        </swiper>
+    </view>
+    <view bindtap="__e" class="banner" data-event-opts="{{[ [ 'tap',[ ['gotiaoz'] ] ] ]}}">
+        <image mode="widthFix" src="{{bargain_banner}}" wx:if="{{bargain_banner}}"></image>
+    </view>
+    <view class="datirukou">
+        <view bindtap="__e" class="datirukou-item1" data-event-opts="{{[ [ 'tap',[ [ 'godati',['$event'] ] ] ] ]}}" style="{{'background:'+question_page_color}}" wx:if="{{is_show_question_image==1}}">参与答题获得奖励</view>
+        <view bindtap="__e" class="datirukou-item2" data-event-opts="{{[ [ 'tap',[ [ 'goduih',['$event'] ] ] ] ]}}" style="{{'background:'+question_page_color}}" wx:if="{{is_show_question_gift_image==1}}">兑换礼品</view>
+    </view>
+    <view class="luck">
+        <view bindtap="__e" class="luck-box1" data-event-opts="{{[ [ 'tap',[ [ 'goindex',['$event'] ] ] ] ]}}" wx:if="{{is_show_prize_image==1}}">
+            <image mode src="{{index_prize_image}}"></image>
+        </view>
+        <view bindtap="__e" class="luck-box1" data-event-opts="{{[ [ 'tap',[ [ 'goduihuan',['$event'] ] ] ] ]}}" wx:if="{{is_show_exchange_image==1}}">
+            <image mode src="{{index_exchange_image}}"></image>
+        </view>
+        <view bindtap="__e" class="luck-box1" data-event-opts="{{[ [ 'tap',[ [ 'gorenwu',['$event'] ] ] ] ]}}" wx:if="{{is_show_task_image==1}}">
+            <image mode src="{{index_task_image}}"></image>
+        </view>
+        <view bindtap="__e" class="luck-box1" data-event-opts="{{[ [ 'tap',[ [ 'gozhongc',['$event'] ] ] ] ]}}" wx:if="{{is_show_comment_image==1}}">
+            <image mode src="{{index_comment_image}}"></image>
+        </view>
+        <view bindtap="__e" class="luck-box1" data-event-opts="{{[ [ 'tap',[ [ 'gomore',['$event'] ] ] ] ]}}" wx:if="{{is_show_bargain_image==1}}">
+            <image mode src="{{index_bargain_image}}"></image>
+        </view>
+    </view>
+    <view bindtap="__e" class="luck" data-event-opts="{{[ [ 'tap',[ ['goindex'] ] ] ]}}" wx:if="{{prize_is_show==1}}">
+        <view class="luck-l">{{''+prize_draw_name+'列表'}}</view>
+        <view class="luck-r">查看更多></view>
+    </view>
+    <block wx:if="{{prize_is_show==1}}" wx:for="{{list[0].goods}}" wx:key="index">
+        <view bindtap="__e" class="drac" data-event-opts="{{[ [ 'tap',[ [ 'goxq',['$0'],[ [ ['list.__$n0.goods','',index,'id'] ] ] ] ] ] ]}}" wx:if="{{list[0].goods.length>0&&index<3}}">
+            <image class="drac-img" mode="scaleToFill" src="{{item.thumb}}"></image>
+            <view class="drac-title">
+                <view class="drac-title-item">{{item.title}}</view>
+                <view class="drac-title-time" wx:if="{{item.open_type==0}}">{{item.end_time+' 自动公布结果'}}</view>
+                <view class="drac-title-time" wx:if="{{item.open_type==1}}">{{prize_draw_name+'人数达到 '+item.max_member+' 人自动公布结果'}}</view>
+                <view class="drac-chakan" style="{{'background:'+theme_color}}">去看看</view>
+            </view>
+        </view>
+    </block>
+    <view bindtap="__e" class="more" data-event-opts="{{[ [ 'tap',[ [ 'goindex',['$event'] ] ] ] ]}}" wx:if="{{prize_is_show==1}}">{{'更多'+prize_draw_name}}</view>
+    <view style="width:94% !important;margin:0 auto;margin-bottom:42rpx;" wx:if="{{guanggaoid!=0}}">
+        <ad adTheme="white" adType="video" class="adzindex" unitId="{{guanggaoid}}" wx:if="{{guanggaoid!=0}}"></ad>
+    </view>
+    <view class="anniu">
+        <button class="anniu-item" openType="contact" sendMessageImg="{{shareimage}}" sendMessageTitle="{{sharetitle}}" showMessageCard="{{true}}">
+            <image mode class="anniu-img" src="{{index_invite_wx_icon}}"></image>
+        </button>
+        <button class="anniu-item" openType="share">
+            <image mode class="anniu-img" src="{{index_invite_share_icon}}"></image>
+        </button>
+    </view>
+    <view style="width:100%;height:100rpx;"></view>
+    <itab-bar bind:__l="__l" comment_plugin_state="{{comment_plugin_state}}" index="0" vueId="1da55560-2"></itab-bar>
+</view>

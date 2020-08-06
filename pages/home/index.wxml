@@ -1,0 +1,34 @@
+<view class="content">
+    <view class="loding" wx:if="{{loading}}">
+        <image mode class="lod" src="../../static/loading.gif"></image>
+    </view>
+    <view class="catelist">
+        <view bindtap="__e" class="{{['cateitem',qq_check_cate_type==2?'cateitem1':'',qq_check_cate_type==3?'cateitem2':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'gocate',['$0','$1'],[ [ ['cate','',index,'id'] ],[ ['cate','',index,'name'] ] ] ] ] ] ]}}" wx:for="{{cate}}">
+            <image mode src="{{item.icon}}"></image>
+            <view class="catename" style="{{'background:'+app_theme_bg_color+';box-shadow:0rpx 10rpx 10rpx '+app_theme_bg_color}}">{{item.name}}</view>
+        </view>
+    </view>
+    <view class="guanggao" wx:if="{{guanggaoid!=0}}">
+        <ad type="banner" unitId="{{guanggaoid}}" wx:if="{{qq_app_check_page==1}}"></ad>
+    </view>
+    <view class="qqshenhe" wx:if="{{qq_app_check_page==1&&qq_check_index_list_type==2}}">
+        <view bindtap="__e" class="{{['qqshenhe-image',qq_check_image_type==2?'qqshenhe-image1':'',qq_check_image_type==3?'qqshenhe-image2':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'yulan',['$0'],[ [ ['qq_app_index_images','',index] ] ] ] ] ] ]}}" style="{{'background:'+app_theme_bg_color}}" wx:for="{{qq_app_index_images}}">
+            <image mode="widthFix" src="{{item}}"></image>
+        </view>
+    </view>
+    <view class="qqshenhe" wx:if="{{qq_app_check_page==1&&qq_check_index_list_type==1}}">
+        <view bindtap="__e" class="{{['qqshenhe-image',qq_check_image_type==2?'qqshenhe-image1':'',qq_check_image_type==3?'qqshenhe-image2':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'yulan',['$0'],[ [ ['qq_app_index_images','',index] ] ] ] ] ] ]}}" style="{{'width:330rpx;height:330rpx;background:'+app_theme_bg_color}}" wx:for="{{qq_app_index_images}}">
+            <image mode="widthFix" src="{{item}}"></image>
+        </view>
+    </view>
+    <view class="qqshenhe" wx:if="{{qq_app_check_page==1&&qq_check_index_list_type==3}}">
+        <view bindtap="__e" class="{{['qqshenhe-image',qq_check_image_type==2?'qqshenhe-image1':'',qq_check_image_type==3?'qqshenhe-image2':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'yulan',['$0'],[ [ ['qq_app_index_images','',index] ] ] ] ] ] ]}}" style="{{'width:150rpx;height:150rpx;background:'+app_theme_bg_color}}" wx:for="{{qq_app_index_images}}">
+            <image mode="widthFix" src="{{item}}"></image>
+        </view>
+    </view>
+    <view class="qqshenhe" wx:if="{{qq_app_check_page==1&&qq_check_index_list_type==4}}">
+        <view bindtap="__e" class="{{['qqshenhe-image',qq_check_image_type==2?'qqshenhe-image1':'',qq_check_image_type==3?'qqshenhe-image2':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'yulan',['$0'],[ [ ['qq_app_index_images','',index] ] ] ] ] ] ]}}" style="{{'width:120rpx;height:120rpx;background:'+app_theme_bg_color}}" wx:for="{{qq_app_index_images}}">
+            <image mode="widthFix" src="{{item}}"></image>
+        </view>
+    </view>
+</view>

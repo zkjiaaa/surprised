@@ -1,0 +1,38 @@
+<view class="content" style="{{isIphoneX?'height:60px':'height:50upx'}}">
+    <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'goindex',['$event'] ] ] ] ]}}" wx:if="{{wepro_tabbar_show1==1}}">
+        <image mode src="{{tablist.s1}}" wx:if="{{index==0}}"></image>
+        <image mode src="{{tablist.i1}}" wx:else></image>
+        <view class="text" wx:if="{{index!=0}}">{{tablist.t1}}</view>
+        <view class="text" style="{{'color:'+theme_color2}}" wx:else>{{tablist.t1}}</view>
+    </view>
+    <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'goduih',['$event'] ] ] ] ]}}" wx:if="{{wepro_tabbar_show3==1}}">
+        <image mode src="{{tablist.s3}}" wx:if="{{index==5}}"></image>
+        <image mode src="{{tablist.i3}}" wx:else></image>
+        <view class="text" wx:if="{{index!=5}}">{{tablist.t3}}</view>
+        <view class="text" style="{{'color:'+theme_color2}}" wx:else>{{tablist.t3}}</view>
+    </view>
+    <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'gorenwu',['$event'] ] ] ] ]}}" wx:if="{{wepro_tabbar_show2==1}}">
+        <image mode src="{{tablist.s2}}" wx:if="{{index==1}}"></image>
+        <image mode src="{{tablist.i2}}" wx:else></image>
+        <view class="text" wx:if="{{index!=1}}">{{tablist.t2}}</view>
+        <view class="text" style="{{'color:'+theme_color2}}" wx:else>{{tablist.t2}}</view>
+    </view>
+    <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'gokanjia',['$event'] ] ] ] ]}}" wx:if="{{wepro_tabbar_show6==1}}">
+        <image mode src="{{tablist.s6}}" wx:if="{{index==6}}"></image>
+        <image mode src="{{tablist.i6}}" wx:else></image>
+        <view class="text" wx:if="{{index!=6}}">{{tablist.t6}}</view>
+        <view class="text" style="{{'color:'+theme_color2}}" wx:else>{{tablist.t6}}</view>
+    </view>
+    <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'gopaih',['$event'] ] ] ] ]}}" wx:if="{{wepro_tabbar_show4==1}}">
+        <image mode src="{{tablist.s4}}" wx:if="{{index==4}}"></image>
+        <image mode src="{{tablist.i4}}" wx:else></image>
+        <view class="text" wx:if="{{index!=4}}">{{tablist.t4}}</view>
+        <view class="text" style="{{'color:'+theme_color2}}" wx:else>{{tablist.t4}}</view>
+    </view>
+    <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'gome',['$event'] ] ] ] ]}}" wx:if="{{wepro_tabbar_show5==1}}">
+        <image mode src="{{tablist.s5}}" wx:if="{{index==3}}"></image>
+        <image mode src="{{tablist.i5}}" wx:else></image>
+        <view class="text" wx:if="{{index!=3}}">{{tablist.t5}}</view>
+        <view class="text" style="{{'color:'+theme_color2}}" wx:else>{{tablist.t5}}</view>
+    </view>
+</view>

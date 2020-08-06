@@ -1,0 +1,45 @@
+<view class="content" style="{{'background:'+theme_color}}">
+    <view class="body" wx:if="{{score_goods_style==2}}">
+        <view class="diand-title" style="background:none;display:block;height:auto;">
+            <view class="title2">{{score_name+'兑换'}}</view>
+            <view class="title3">{{'您可以通过参与'+prize_draw_name+'等任务获得更多'+score_name}}</view>
+        </view>
+        <view class="item" wx:for="{{list}}">
+            <view class="item-image">
+                <image mode src="{{item.image}}"></image>
+            </view>
+            <view class="item-title">{{item.name}}</view>
+            <view class="item-price">
+                <image mode src="{{score_icon}}"></image>
+                <text style="width:150rpx;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">{{item.score_num+score_name+'兑换'}}</text>
+            </view>
+            <view bindtap="__e" class="item-duih" data-event-opts="{{[ [ 'tap',[ [ 'duihuan',['$0','$1','$2'],[ [ ['list','',index,'id'] ],[ ['list','',index,'score_num'] ],[ ['list','',index,'type'] ] ] ] ] ] ]}}">免费兑换</view>
+        </view>
+    </view>
+    <view class="body" wx:if="{{score_goods_style==1}}">
+        <view class="diand-title" style="background:none;display:block;height:auto;">
+            <view class="title2">{{score_name+'兑换'}}</view>
+            <view class="title3">{{'您可以通过参与'+prize_draw_name+'等任务获得更多'+score_name}}</view>
+        </view>
+        <view class="item-shu" wx:for="{{list}}">
+            <view class="shu-left">
+                <view class="item-image-shu">
+                    <image mode src="{{item.image}}"></image>
+                </view>
+                <view class="shu">
+                    <view class="item-title">{{item.name}}</view>
+                    <view class="item-price">
+                        <image mode src="{{score_icon}}"></image>
+                        <text>{{item.score_num+score_name+'兑换'}}</text>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="__e" class="item-duih" data-event-opts="{{[ [ 'tap',[ [ 'duihuan',['$0','$1','$2'],[ [ ['list','',index,'id'] ],[ ['list','',index,'score_num'] ],[ ['list','',index,'type'] ] ] ] ] ] ]}}">
+                <text>免费</text>
+                <text>兑换</text>
+            </view>
+        </view>
+    </view>
+    <view style="width:100%;height:100rpx;"></view>
+    <itab-bar bargain_is_open="{{bargain_is_open}}" bind:__l="__l" comment_plugin_state="{{comment_plugin_state}}" index="5" vueId="24c299a7-1"></itab-bar>
+</view>

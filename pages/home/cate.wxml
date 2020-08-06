@@ -1,0 +1,22 @@
+<view class="content">
+    <view class="qqshenhe" wx:if="{{config.qq_check_list_type==2}}">
+        <view bindtap="__e" class="{{['qqshenhe-image',config.qq_check_image_type==2?'qqshenhe-image1':'',config.qq_check_image_type==3?'qqshenhe-image2':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'yulan',['$0'],[ [ ['qq_app_index_images','',index,'image'] ] ] ] ] ] ]}}" style="{{'background:'+app_theme_bg_color}}" wx:for="{{qq_app_index_images}}">
+            <image mode="widthFix" src="{{item.image}}"></image>
+        </view>
+    </view>
+    <view class="qqshenhe" wx:if="{{config.qq_check_list_type==1}}">
+        <view bindtap="__e" class="{{['qqshenhe-image',config.qq_check_image_type==2?'qqshenhe-image1':'',config.qq_check_image_type==3?'qqshenhe-image2':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'yulan',['$0'],[ [ ['qq_app_index_images','',index,'image'] ] ] ] ] ] ]}}" style="{{'width:330rpx;height:330rpx;background:'+app_theme_bg_color}}" wx:for="{{qq_app_index_images}}">
+            <image mode="widthFix" src="{{item.image}}"></image>
+        </view>
+    </view>
+    <view class="qqshenhe" wx:if="{{config.qq_check_list_type==3}}">
+        <view bindtap="__e" class="{{['qqshenhe-image',config.qq_check_image_type==2?'qqshenhe-image1':'',config.qq_check_image_type==3?'qqshenhe-image2':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'yulan',['$0'],[ [ ['qq_app_index_images','',index,'image'] ] ] ] ] ] ]}}" style="{{'width:150rpx;height:150rpx;background:'+app_theme_bg_color}}" wx:for="{{qq_app_index_images}}">
+            <image mode="widthFix" src="{{item.image}}"></image>
+        </view>
+    </view>
+    <view class="qqshenhe" wx:if="{{config.qq_check_list_type==4}}">
+        <view bindtap="__e" class="{{['qqshenhe-image',config.qq_check_image_type==2?'qqshenhe-image1':'',config.qq_check_image_type==3?'qqshenhe-image2':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'yulan',['$0'],[ [ ['qq_app_index_images','',index,'image'] ] ] ] ] ] ]}}" style="{{'width:120rpx;height:120rpx;background:'+app_theme_bg_color}}" wx:for="{{qq_app_index_images}}">
+            <image mode="widthFix" src="{{item.image}}"></image>
+        </view>
+    </view>
+</view>

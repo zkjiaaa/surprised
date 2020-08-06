@@ -1,0 +1,57 @@
+<view class="container999">
+    <view class="nav">
+        <nav-tab bind:__l="__l" bind:changeTab="__e" class="vue-ref" data-event-opts="{{[ [ '^changeTab',[ ['changeTab'] ] ] ]}}" data-ref="navTab" gonggaolist="{{gonggaolist}}" tabTitle="{{tabTitle}}" theme_color="{{theme_color}}" vueId="8dd740cc-1"></nav-tab>
+    </view>
+    <view class="tui-notice-board" wx:if="{{gonggaolist.length>0}}">
+        <tui-icon bind:__l="__l" color="#f54f46" name="news-fill" size="{{24}}" style="margin-left:20rpx;" vueId="8dd740cc-2"></tui-icon>
+        <swiper autoplay circular vertical class="tui-scorll-view" interval="3000">
+            <swiper-item class="tui-notice" wx:for="{{gonggaolist}}">
+                <view class="tui-news-item">{{item.content}}</view>
+            </swiper-item>
+        </swiper>
+    </view>
+    <swiper bindchange="__e" current="{{currentTab}}" data-event-opts="{{[ [ 'change',[ [ 'swiperTab',['$event'] ] ] ] ]}}" style="min-height:100vh;">
+        <swiper-item wx:for="{{list}}" wx:for-index="listIndex" wx:for-item="listItem" wx:key="listIndex">
+            <scroll-view bindscrolltolower="__e" bindscrolltoupper="__e" data-event-opts="{{[ [ 'scrolltoupper',[ [ 'daotop',['$event'] ] ] ],[ 'scrolltolower',[ [ 'daobottom',['$event'] ] ] ] ]}}" scrollY="true" style="height:100%;">
+                <view id="{{'top'+listIndex}}" style="width:100%;height:176rpx;" wx:if="{{tabTitle.length>1}}"></view>
+                <view class="{{['content111',gaodushow?'gaodu111':'']}}" style="{{'background:'+theme_color}}">
+                    <view class="banner" wx:if="{{listItem.banner!=null&&listItem.banner!=''}}">
+                        <image bindtap="__e" class="banner" data-event-opts="{{[ [ 'tap',[ [ 'tiaozh',['$0','$1','$2'],[ [ ['list','',listIndex,'linktype'] ],[ ['list','',listIndex,'appid'] ],[ ['list','',listIndex,'path'] ] ] ] ] ] ]}}" mode="scaleToFill" src="{{listItem.banner}}"></image>
+                    </view>
+                    <view style="width:94% !important;margin:0 auto;margin-bottom:42rpx;" wx:if="{{listItem.goods.length<=0&&guanggaoid!=0}}">
+                        <ad adTheme="white" adType="video" unitId="{{guanggaoid}}" wx:if="{{listItem.goods.length<=0&&guanggaoid!=0}}"></ad>
+                    </view>
+                    <view style="width:100%;height:40rpx;"></view>
+                    <block wx:for="{{listItem.goods}}" wx:key="index">
+                        <view bindtap="__e" class="drac" data-event-opts="{{[ [ 'tap',[ [ 'goxq',['$0'],[ [ ['list','',listIndex],['goods','',index,'id'] ] ] ] ] ] ]}}" wx:if="{{listItem.goods.length>0}}">
+                            <image class="drac-img" mode="scaleToFill" src="{{item.thumb}}"></image>
+                            <view class="drac-title">
+                                <view class="drac-title-item">{{item.title}}</view>
+                                <view class="drac-title-time" wx:if="{{item.open_type==0}}">{{item.end_time+' 自动公布结果'}}</view>
+                                <view class="drac-title-time" wx:if="{{item.open_type==1}}">{{prize_draw_name+'人数达到 '+item.max_member+' 人自动公布结果'}}</view>
+                                <view class="drac-chakan" style="{{'background:'+theme_color}}">去看看</view>
+                            </view>
+                        </view>
+                        <view style="width:94% !important;margin:0 auto;margin-bottom:42rpx;" wx:if="{{(index+1)%3==0&&index!=0&&guanggaoid!=0||listItem.goods.length<3}}">
+                            <ad adTheme="white" adType="video" unitId="{{guanggaoid}}" wx:if="{{(index+1)%3==0&&index!=0&&guanggaoid!=0||listItem.goods.length<3}}"></ad>
+                        </view>
+                    </block>
+                </view>
+                <view class="nodrac" wx:if="{{listItem.length===0}}">暂无信息</view>
+                <view style="width:100%;height:100rpx;" wx:if="{{app_index_page_new==2}}"></view>
+            </scroll-view>
+        </swiper-item>
+    </swiper>
+    <view class="anniu">
+        <button class="anniu-item" openType="contact" sendMessageImg="{{shareimage}}" sendMessageTitle="{{sharetitle}}" showMessageCard="{{true}}" wx:if="{{app_index_page_new==2}}">
+            <image mode class="anniu-img" src="{{index_invite_wx_icon}}"></image>
+        </button>
+        <button class="anniu-item" openType="share" wx:if="{{app_index_page_new==2}}">
+            <image mode class="anniu-img" src="{{index_invite_share_icon}}"></image>
+        </button>
+        <button bindtap="__e" class="anniu-item" data-event-opts="{{[ [ 'tap',[ ['gohome'] ] ] ]}}" wx:if="{{app_index_page_new==1}}">
+            <image mode class="anniu-img" src="{{index_page_icon}}"></image>
+        </button>
+    </view>
+    <itab-bar bind:__l="__l" comment_plugin_state="{{comment_plugin_state}}" index="0" vueId="8dd740cc-3" wx:if="{{app_index_page_new==2}}"></itab-bar>
+</view>

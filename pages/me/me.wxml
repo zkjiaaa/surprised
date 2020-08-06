@@ -1,0 +1,61 @@
+<view>
+    <view class="header">
+        <view class="headbg" style="{{'background:'+theme_color}}"></view>
+        <view class="bg">
+            <view class="box">
+                <view class="box-hd">
+                    <view class="avator">
+                        <image class="_img" src="{{showdata.avatar}}"></image>
+                    </view>
+                    <view class="phone-number">{{showdata.username}}</view>
+                    <view class="phone-number" wx:if="{{showdata.id!=undefined}}">{{'ID:'+showdata.id}}</view>
+                    <view class="phone-number little" wx:if="{{daily_prize_num>0&&prize_is_show==1}}">{{'今天参与'+prize_draw_name}}<label class="_span" style="{{'color:'+theme_color}}">{{member_prize_num}}</label>次，剩余<label class="_span" style="{{'color:'+theme_color}}">{{daily_prize_num-member_prize_num}}</label>次</view>
+                    <view class="phone-number little" wx:if="{{daily_prize_num>0&&prize_is_show==1}}">每日送<label class="_span" style="{{'color:'+theme_color}}">{{daily_prize_num}}</label>{{'次'+prize_draw_name+'机会'}}</view>
+                    <view class="phone-number little" wx:if="{{daily_prize_num<=member_prize_num&&prize_is_show==1}}">{{'今天参与'+prize_draw_name+'机会已用完，请明天再来'}}</view>
+                </view>
+                <view class="box-bd">
+                    <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ ['gojilu'] ] ] ]}}">
+                        <view class="icon">{{choujnum1}}</view>
+                        <view class="text">{{prize_draw_name+'次数'}}</view>
+                    </view>
+                    <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ ['gomylist'] ] ] ]}}">
+                        <view class="icon">{{choujnum2}}</view>
+                        <view class="text">我的礼包</view>
+                    </view>
+                    <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ ['goduihlist'] ] ] ]}}">
+                        <view class="icon">{{jilunum}}</view>
+                        <view class="text">兑换记录</view>
+                    </view>
+                    <view class="item">
+                        <view class="icon">{{showdata.score}}</view>
+                        <view class="text">{{score_name}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="list-content">
+        <view class="list">
+            <view bindtap="__e" class="li " data-event-opts="{{[ [ 'tap',[ ['gowenti'] ] ] ]}}" wx:if="{{is_show_help==1}}">
+                <view class="text">常见问题</view>
+                <image class="to" src="../../static/right.png"></image>
+            </view>
+            <view class="li" wx:if="{{is_show_about_us==1}}">
+                <view bindtap="__e" class="text" data-event-opts="{{[ [ 'tap',[ ['govip'] ] ] ]}}">关于我们</view>
+                <image class="to" src="../../static/right.png"></image>
+            </view>
+            <view bindtap="__e" class="li " data-event-opts="{{[ [ 'tap',[ ['kefu'] ] ] ]}}">
+                <view class="text">
+                    <text>联系客服</text>
+                    <text>{{kef}}</text>
+                </view>
+                <image class="to" src="../../static/right.png"></image>
+            </view>
+        </view>
+    </view>
+    <view style="width:92% !important;margin:0 auto;margin-bottom:42rpx;" wx:if="{{guanggaoid!=0}}">
+        <ad adTheme="white" adType="video" unitId="{{guanggaoid}}" wx:if="{{guanggaoid!=0}}"></ad>
+    </view>
+    <view style="width:100%;height:100rpx;"></view>
+    <itab-bar bargain_is_open="{{bargain_is_open}}" bind:__l="__l" comment_plugin_state="{{comment_plugin_state}}" index="3" vueId="8e55f700-1"></itab-bar>
+</view>

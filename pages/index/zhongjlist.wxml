@@ -1,0 +1,12 @@
+<view class="content">
+    <view class="qiyu">
+        <view class="qiyu-item" wx:for="{{showdata}}">
+            <view class="paim">{{index+1}}</view>
+            <view class="qiyu-toux">
+                <image mode class="qiyu-toux" src="{{item.avatar}}"></image>
+            </view>
+            <view class="qiyu-name">{{item.username}}</view>
+            <view class="num" style="{{'color:'+theme_color}}"></view>
+        </view>
+    </view>
+</view>

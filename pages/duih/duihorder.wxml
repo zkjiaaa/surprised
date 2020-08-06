@@ -1,0 +1,52 @@
+<view class="content">
+    <view class="card">
+        <view class="title">请填写兑换人信息</view>
+        <view class="item">
+            <view class="name">
+                <view class="name1">兑换人</view>
+                <view class="name2">NAME</view>
+            </view>
+            <view class="ipt">
+                <input bindinput="__e" data-event-opts="{{[ [ 'input',[ [ 'getname',['$event'] ] ] ] ]}}" placeholder="请输入昵称" placeholderClass="ipt1" type="text" value="{{name}}"></input>
+            </view>
+        </view>
+        <view class="item" wx:if="{{type==1}}">
+            <view class="name">
+                <view class="name1">城市</view>
+                <view class="name2">CITY</view>
+            </view>
+            <view class="ipt">
+                <view bindtap="__e" class="{{['tab',resultInfo.result=='请选择'?'resultInfo1':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'toggleTab',['$0',index],[ [ ['tabList','',index] ] ] ] ] ] ]}}" wx:for="{{tabList}}">{{''+resultInfo.result+''}}</view>
+                <w-picker areaCode="{{['33','3301','330108']}}" bind:__l="__l" bind:confirm="__e" class="vue-ref" data-event-opts="{{[ [ '^confirm',[ ['onConfirm'] ] ] ]}}" data-ref="region" defaultVal="{{['浙江省','杭州市','滨江区']}}" hideArea="{{false}}" mode="region" timeout="{{true}}" vueId="310ed8ce-1"></w-picker>
+            </view>
+        </view>
+        <view class="item" wx:if="{{type==1}}">
+            <view class="name">
+                <view class="name1">详细地址</view>
+                <view class="name2">ADD</view>
+            </view>
+            <view class="ipt">
+                <input bindinput="__e" data-event-opts="{{[ [ 'input',[ [ 'getaddress',['$event'] ] ] ] ]}}" placeholder="详细地址" placeholderClass="ipt1" type="text" value="{{address}}"></input>
+            </view>
+        </view>
+        <view class="item" wx:if="{{type==1}}">
+            <view class="name">
+                <view class="name1">联系电话</view>
+                <view class="name2">TEL</view>
+            </view>
+            <view class="ipt">
+                <input bindinput="__e" data-event-opts="{{[ [ 'input',[ [ 'getmobile',['$event'] ] ] ] ]}}" placeholder="手机号码" placeholderClass="ipt1" type="number" value="{{mobile}}"></input>
+            </view>
+        </view>
+        <view class="item">
+            <view class="name">
+                <view class="name1">微信</view>
+                <view class="name2">WECHAT</view>
+            </view>
+            <view class="ipt">
+                <input bindinput="__e" data-event-opts="{{[ [ 'input',[ [ 'getqq',['$event'] ] ] ] ]}}" placeholder="请输入微信" placeholderClass="ipt1" type="text" value="{{qq}}"></input>
+            </view>
+        </view>
+        <view bindtap="__e" class="but" data-event-opts="{{[ [ 'tap',[ ['submit'] ] ] ]}}" style="{{'background:'+theme_color}}">提交信息</view>
+    </view>
+</view>

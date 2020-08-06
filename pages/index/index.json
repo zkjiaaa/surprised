@@ -1,0 +1,11 @@
+{
+    "navigationBarTitleText": "首页",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "white",
+    "usingComponents": {
+        "refresh": "/components/refresh",
+        "nav-tab": "/components/navTab",
+        "tui-icon": "/components/icon/icon",
+        "itab-bar": "/components/tabBar"
+    }
+}

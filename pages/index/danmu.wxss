@@ -1,0 +1,53 @@
+.ima {
+    width: 50rpx;
+    height: 50rpx;
+    border-radius: 50%;
+    margin-right: 10rpx;
+}
+
+.danmu {
+    position: absolute;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    background: rgba(0,0,0,.6);
+    border-radius: 50rpx;
+    color: #fff;
+    z-index: 3;
+    font-size: 22rpx;
+    padding-right: 20rpx;
+    animation: mymove 5s linear forwards;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+
+.aon {
+    white-space: nowrap;
+}
+
+.l-barrage {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    height: 480rpx;
+}
+
+@-webkit-keyframes mymove {
+    from {
+        left: 100%;
+    }
+
+    to {
+        left: -200%;
+    }
+}
+
+@keyframes mymove {
+    from {
+        left: 100%;
+    }
+
+    to {
+        left: -200%;
+    }
+}

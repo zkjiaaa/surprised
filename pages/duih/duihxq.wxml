@@ -1,0 +1,57 @@
+<view class="content">
+    <view class="card-jianj" style="{{'color:'+theme_color}}" wx:if="{{1==list.status}}">待发放</view>
+    <view class="card-jianj" style="{{'color:'+theme_color}}" wx:if="{{2==list.status}}">已发放</view>
+    <view class="card-jianj" style="{{'color:'+theme_color}}" wx:if="{{3==list.status}}">已完成</view>
+    <view class="title">
+        <view class="item-shu">
+            <view class="shu-left">
+                <view class="item-image-shu">
+                    <image mode src="{{list.goods_image}}"></image>
+                </view>
+                <view class="shu">
+                    <view class="item-title">{{list.goods_name}}</view>
+                    <view class="item-price" style="{{'backgrounnd:'+theme_color}}">
+                        <image mode src="{{score_icon}}"></image>
+                        <text style="{{'color:'+theme_color}}">{{'兑换消耗'+list.score_num}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="body" style="border-bottom:20rpx solid #f5f5f5;">
+        <view class="nico leftnico">
+            <text>收件人:</text>
+            <text>{{list.username}}</text>
+        </view>
+        <view class="nico leftnico">
+            <text>联系电话:</text>
+            <text>{{list.mobile}}</text>
+        </view>
+        <view class="nico leftnico">
+            <text>收货地址:</text>
+            <text>{{list.city_id}}</text>
+        </view>
+        <view class="nico leftnico">
+            <text>详细地址:</text>
+            <text>{{list.address}}</text>
+        </view>
+    </view>
+    <view class="body">
+        <view class="nico">
+            <text>创建时间:</text>
+            <text>{{list.create_time}}</text>
+        </view>
+        <view class="nico" wx:if="{{list.status!=1}}">
+            <text>发件时间:</text>
+            <text>{{list.express_time}}</text>
+        </view>
+        <view class="nico" wx:if="{{list.status==3}}">
+            <text>订单完成时间:</text>
+            <text>{{list.finish_time}}</text>
+        </view>
+    </view>
+    <view class="caoz">
+        <view bindtap="__e" class="caoz-item" data-event-opts="{{[ [ 'tap',[ ['kefu'] ] ] ]}}" style="{{'background-color:'+theme_color}}">联系客服</view>
+        <view bindtap="__e" class="caoz-item" data-event-opts="{{[ [ 'tap',[ ['queren'] ] ] ]}}" style="{{'background-color:'+theme_color}}" wx:if="{{list.status==2}}">确认收货</view>
+    </view>
+</view>

@@ -1,0 +1,302 @@
+.unbai {
+    background: #fff;
+    margin: 0 auto;
+    width: 690rpx;
+    margin-top: 120rpx;
+    border-radius: 20rpx;
+    box-sizing: border-box;
+    padding: 40rpx 0;
+}
+
+.content {
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding-top: 30rpx;
+}
+
+.flexb {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.header {
+    margin: 30rpx;
+    padding: 30rpx;
+    background-color: #fff;
+    border-radius: 12rpx;
+    margin-top: 0;
+}
+
+.header-img {
+    width: 120rpx;
+    height: 120rpx;
+}
+
+.header-img image {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+}
+
+.header-c {
+    width: 50%;
+    margin-left: 30rpx;
+}
+
+.header-name {
+    font-size: 30rpx;
+}
+
+.header-tis {
+    margin-top: 24rpx;
+    font-size: 24rpx;
+    color: #999;
+}
+
+.header-tis text {
+    color: #f67139;
+}
+
+.xinxin {
+    margin-top: 12rpx;
+}
+
+.xinxin image {
+    width: 24rpx;
+    height: 24rpx;
+    margin: 0 2rpx;
+}
+
+.header-r {
+    width: 20%;
+    text-align: center;
+}
+
+.header-nany {
+    font-size: 28rpx;
+    color: #f67139;
+}
+
+.box {
+    padding: 1rpx;
+    margin: 60rpx 30rpx 30rpx;
+    height: 820rpx;
+    border-radius: 12rpx;
+    background-color: #fff;
+    position: relative;
+}
+
+.tishu {
+    position: absolute;
+    top: -24rpx;
+    left: 250rpx;
+    background-color: red;
+    padding: 6rpx 30rpx;
+    color: #fff1ed;
+}
+
+.tishu text {
+    color: #fff;
+    margin: 0 12rpx;
+}
+
+.time {
+    margin: 100rpx auto 30rpx;
+    width: 120rpx;
+    height: 120rpx;
+    text-align: center;
+    line-height: 120rpx;
+    border: 6rpx solid #f67139;
+    border-radius: 50%;
+    font-size: 42rpx;
+}
+
+.time2 {
+    margin: 60rpx auto;
+    width: 180rpx;
+    height: 180rpx;
+    text-align: center;
+    line-height: 180rpx;
+    border: 12rpx solid #f67139;
+    border-radius: 50%;
+    font-size: 42rpx;
+}
+
+.time3 {
+    margin: 24rpx auto;
+    width: 180rpx;
+    height: 180rpx;
+    text-align: center;
+    line-height: 180rpx;
+    border: 12rpx solid #f67139;
+    border-radius: 50%;
+    font-size: 42rpx;
+}
+
+.qingw {
+    font-size: 30rpx;
+    margin: 30rpx 24rpx 60rpx;
+}
+
+.cnent {
+    text-align: center;
+}
+
+.list {
+    font-size: 28rpx;
+    background-color: #edeef3;
+    margin: 30rpx 48rpx;
+    padding: 18rpx;
+    border-radius: 42rpx;
+}
+
+.list-se {
+    background-color: #f67139;
+    color: #fff;
+}
+
+.unLottery {
+    position: fixed;
+    z-index: 2;
+    top: 0rpx;
+    width: 100%;
+    background-color: rgba(0,0,0,.5);
+    height: 100%;
+}
+
+.close {
+    z-index: 999;
+    font-weight: 700;
+    padding: 12rpx 0;
+    text-align: center;
+    font-size: 30rpx;
+    border: 2rpx solid #fff;
+    width: 200rpx;
+    margin: 0 auto;
+}
+
+.fuhuo {
+    padding-top: 50rpx;
+    font-size: 42rpx;
+    text-align: center;
+}
+
+.tishi {
+    font-size: 30rpx;
+    text-align: center;
+}
+
+.mianfei {
+    text-align: center;
+    font-size: 30rpx;
+    width: 420rpx;
+    padding: 18rpx 0;
+    border-radius: 42rpx;
+    color: #fff;
+    background-color: #fe5e00;
+    margin: 24rpx auto;
+}
+
+.tainan {
+    text-align: center;
+    font-size: 30rpx;
+}
+
+.yaoqing {
+    text-align: center;
+    font-size: 30rpx;
+    width: 420rpx;
+    padding: 18rpx 0;
+    border-radius: 42rpx;
+    background-color: #02b164;
+    color: #fff;
+    margin: 24rpx auto;
+}
+
+.daojs {
+    font-size: 42rpx;
+    text-align: center;
+}
+
+.list-seduile {
+    background-color: #02b164!important;
+}
+
+.zhunb {
+    font-size: 28rpx;
+    margin: 48rpx auto;
+    text-align: center;
+}
+
+.qingw2 {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 0 30rpx;
+}
+
+.tiankong {
+    width: 140rpx;
+    height: 140rpx;
+    display: flex;
+    box-sizing: border-box;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    border: 1rpx solid #fff;
+    font-size: 34rpx;
+}
+
+.donghua {
+    animation: danru .5s;
+    font-size: 42rpx;
+}
+
+@-webkit-keyframes danru {
+    0% {
+        opacity: 0;
+        transform: scale(.6);
+    }
+
+    33% {
+        opacity: 1;
+        transform: scale(.8);
+    }
+
+    66% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes danru {
+    0% {
+        opacity: 0;
+        transform: scale(.6);
+    }
+
+    33% {
+        opacity: 1;
+        transform: scale(.8);
+    }
+
+    66% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

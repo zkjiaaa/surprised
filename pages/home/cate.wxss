@@ -1,0 +1,33 @@
+.qqshenhe-image {
+    width: 210rpx;
+    height: 210rpx;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: 6rpx;
+    margin: 15rpx 0;
+    overflow: hidden;
+}
+
+.qqshenhe-image1 {
+    border-radius: 12rpx!important;
+}
+
+.qqshenhe-image2 {
+    border-radius: 0!important;
+}
+
+.qqshenhe-image image {
+    width: 100%;
+}
+
+.qqshenhe {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    padding: 30rpx;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}

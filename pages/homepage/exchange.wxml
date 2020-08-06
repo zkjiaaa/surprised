@@ -1,0 +1,22 @@
+<view class="content" style="{{'background-color:'+theme_color}}">
+    <view class="header">
+        <view class="jiang">
+            <view class="jiangpq">奖品区</view>
+            <view class="shengy">
+                <image mode src="{{voucher_image}}"></image>{{'当前剩余：'+member_voucher+' '+voucher_name+''}}</view>
+        </view>
+        <view bindtap="__e" class="jilu" data-event-opts="{{[ [ 'tap',[ ['gojilu'] ] ] ]}}">兑换记录</view>
+    </view>
+    <view>
+        <view class="flexb" wx:for="{{list}}">
+            <view class="img">
+                <image mode src="{{item.image}}"></image>
+            </view>
+            <view class="name">
+                <view>{{''+item.name+''}}</view>
+                <view class="itemprice">{{''+item.voucher_num+voucher_name+''}}</view>
+            </view>
+            <view bindtap="__e" class="dui" data-event-opts="{{[ [ 'tap',[ [ 'goredeemqb',['$0'],[ [ ['list','',index,'id'] ] ] ] ] ] ]}}">兑换</view>
+        </view>
+    </view>
+</view>

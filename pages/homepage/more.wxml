@@ -1,0 +1,54 @@
+<view class="content" style="{{'background:'+theme_color}}">
+    <view class="header">
+        <image mode class="banner" src="{{bargain_banner}}"></image>
+        <view bindtap="__e" class="guiz" data-event-opts="{{[ [ 'tap',[ [ 'goodcloseLottery',['$event'] ] ] ] ]}}">活动规则</view>
+        <view bindtap="__e" class="guiz" data-event-opts="{{[ [ 'tap',[ [ 'gojilu',['$event'] ] ] ] ]}}" style="top:120rpx;">砍价记录</view>
+        <view class="yingd">全场皮肤<text>免费砍回家</text>
+        </view>
+    </view>
+    <view class="box flexb" wx:for="{{member_goods_list}}">
+        <view class="box-img">
+            <image mode src="{{item.image}}"></image>
+        </view>
+        <view class="box-r">
+            <view class="box-name">{{''+item.name+''}}</view>
+            <view class="flexb b-box">
+                <view class="box-price">{{'原价￥'+item.price+''}}</view>
+                <view class="box-huoq">{{''+item.sales+'人已免费拿'}}</view>
+            </view>
+            <view class="flexb">
+                <view class="progress-box">
+                    <progress active activeColor="#F67139" percent="{{item.percent}}" strokeWidth="4"></progress>
+                </view>
+                <view class="yikan">{{'已砍'+item.percent+'%'}}</view>
+            </view>
+            <view bindtap="__e" class="continue" data-event-opts="{{[ [ 'tap',[ [ 'gobargain',['$0'],[ [ ['member_goods_list','',index,'id'] ] ] ] ] ] ]}}">继续砍价</view>
+        </view>
+    </view>
+    <view class="box flexb" wx:for="{{goods_list}}">
+        <view class="box-img">
+            <image mode src="{{item.image}}"></image>
+        </view>
+        <view class="box-r">
+            <view class="box-name">{{''+item.name+''}}</view>
+            <view class="flexb b-box">
+                <view class="box-price">{{'原价￥'+item.price+''}}</view>
+                <view class="box-huoq">{{''+item.sales+'人已免费拿'}}</view>
+            </view>
+            <view bindtap="__e" class="mianf" data-event-opts="{{[ [ 'tap',[ [ 'gobargain',['$0'],[ [ ['goods_list','',index,'id'] ] ] ] ] ] ]}}">点击免费砍</view>
+        </view>
+    </view>
+    <view class="unLottery" wx:if="{{goodLottery==true}}">
+        <view class="tang">
+            <view class="hdgz">活动规则</view>
+            <view>
+                <view class="guizjs">1.砍价免费拿活动不需要支付任何费用,邀请好友帮忙砍价成功即可免费拿走。</view>
+                <view class="guizjs">2.在规定时间内邀请好友砍价到0点券即为成功，请务必填写兑换奖品领取消息，否则不予发放。</view>
+                <view class="guizjs">3.所有奖品7个工作日内发放完毕，如有疑问请联系客服。</view>
+                <view class="guizjs">4.用户通过作弊、反编译等不正常砍价行为获得奖品，平台将不予发放且封禁帐号。</view>
+            </view>
+            <view bindtap="__e" class="close" data-event-opts="{{[ [ 'tap',[ [ 'goodcloseLottery',['$event'] ] ] ] ]}}">知道了</view>
+        </view>
+    </view>
+    <itab-bar bind:__l="__l" comment_plugin_state="{{comment_plugin_state}}" index="6" vueId="6553f70e-1" wx:if="{{wepro_tabbar_show6==1||wepro_tabbar_show6=='1'}}"></itab-bar>
+</view>

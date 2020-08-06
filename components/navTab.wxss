@@ -1,0 +1,92 @@
+.gaodu1 {
+    height: 278rpx!important;
+    padding-top: 100rpx!important;
+}
+
+.navtu {
+    width: 60rpx;
+    height: 60rpx;
+    margin: 0 auto;
+    border-radius: 6rpx;
+}
+
+.navTabBox {
+    width: 100vw;
+    color: hsla(0,0%,100%,.5);
+}
+
+.navTabBox .click {
+    color: #fff;
+}
+
+.navTabBox .navtuactive {
+    width: 90rpx;
+    height: 90rpx;
+}
+
+.navTabBox .longTab {
+    width: 100%;
+    height: 178rpx;
+    padding-top: 0;
+    box-sizing: border-box;
+}
+
+.navTabBox .longTab .longItem {
+    height: 90rpx;
+    display: inline-block;
+    line-height: 90rpx;
+    text-align: center;
+}
+
+.navTabBox .longTab .underlineBox {
+    height: 3px;
+    width: 20%;
+    display: flex;
+    align-content: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    transition: .5s;
+    margin-top: 20rpx;
+}
+
+.navTabBox .longTab .underlineBox .underline {
+    width: 84rpx;
+    height: 4px;
+    background-color: #fff;
+}
+
+.navTabBox .shortTab {
+    width: 100%;
+}
+
+.navTabBox .shortTab .navTab {
+    display: flex;
+    width: 100%;
+    height: 90rpx;
+    position: relative;
+}
+
+.navTabBox .shortTab .navTab .navTabItem {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 100%;
+    font-size: 28rpx;
+}
+
+.navTabBox .shortTab .underlineBox {
+    height: 3px;
+    display: flex;
+    align-content: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    transition: .5s;
+}
+
+.navTabBox .shortTab .underlineBox .underline {
+    width: 84rpx;
+    height: 3px;
+    background-color: #fff;
+}

@@ -1,0 +1,146 @@
+<view class="content" style="{{'background:'+theme_color+';min-height:100vh;'}}">
+    <l-barrage bind:__l="__l" bind:end="__e" class="vue-ref" data-event-opts="{{[ [ '^end',[ ['onEnd'] ] ] ]}}" data-ref="lBarrage" vueId="01bce941-1"></l-barrage>
+    <view class="title-card">
+        <view class="swiper">
+            <swiper autoplay="{{true}}" class="swiper" duration="{{1000}}" indicatorActiveColor="#f52f3e" indicatorColor="#fff" indicatorDots="{{true}}" interval="{{3000}}">
+                <swiper-item wx:for="{{swiperList}}" wx:key="index">
+                    <view class="swiper-item">
+                        <image src="{{item}}"></image>
+                    </view>
+                </swiper-item>
+            </swiper>
+        </view>
+        <view class="card-title">
+            <view class="title">{{showdata.goods.title}}</view>
+            <view class="sub_itle" wx:if="{{showdata.goods.sub_title!=null}}">{{showdata.goods.sub_title}}</view>
+            <view class="card-jianj" wx:if="{{showdata.goods.open_type==0}}">{{showdata.goods.end_time+' 自动公布结果'}}</view>
+            <view class="card-jianj" wx:if="{{showdata.goods.open_type==1}}">{{prize_draw_name+'人数达到 '+showdata.goods.max_member+'\n\t\t\t\t人自动公布结果'}}</view>
+            <button class="card-jianj border-top" openType="contact" sendMessageImg="{{share_image}}" sendMessagePath="/pages/index/index" sendMessageTitle="{{showdata.goods.title}}" showMessageCard="{{true}}">
+                <text>联系客服</text>
+                <text>一键咨询 ></text>
+            </button>
+        </view>
+    </view>
+    <view class="title-tap">
+        <view bindtap="__e" class="tapitem" data-event-opts="{{[ [ 'tap',[ [ 'bdtap',[0] ] ] ] ]}}">{{'立即'+prize_draw_name+''}}<view class="itembai" wx:if="{{leftid==0}}"></view>
+        </view>
+        <view bindtap="__e" class="tapitem" data-event-opts="{{[ [ 'tap',[ [ 'bdtap',[1] ] ] ] ]}}">奖品详情<view class="itembai" wx:if="{{leftid==1}}"></view>
+        </view>
+        <view bindtap="__e" class="tapitem" data-event-opts="{{[ [ 'tap',[ [ 'bdtap',[2] ] ] ] ]}}" wx:if="{{rule.length>0}}">{{''+prize_draw_name+'规则'}}<view class="itembai" wx:if="{{rule.length>0&&leftid==2}}"></view>
+        </view>
+    </view>
+    <view class="zhuli" wx:if="{{yichou&&showdata.goods.type==0&&leftid==0&&zhulitype==1}}">
+        <view class="zhuli-title">
+            <view class="zhuli-leftt">
+                <view class="zhuli-name">{{detail_support_name}}</view>
+                <view class="zhuli-ms">{{detail_support_tips}}</view>
+            </view>
+            <button bindtap="__e" class="chouj-yaoq" data-event-opts="{{[ [ 'tap',[ [ 'showshare',['$event'] ] ] ] ]}}" style="{{'background:'+theme_color}}">{{detail_invite_name}}</button>
+        </view>
+        <view class="zhuli-img">
+            <view class="zhuli-img-image" wx:if="{{index<5}}" wx:for="{{help_member}}">
+                <view class="jian">+1</view>
+                <image mode src="{{item.avatar}}"></image>
+            </view>
+            <view class="zhuli-img-image" wx:for="{{wei}}">
+                <view class="jian">+1</view>
+                <image mode src="{{item}}" style="background:#EEEEEE;"></image>
+            </view>
+            <view class="zhuli-img-image">
+                <view class="jian">+N</view>
+                <image mode bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'gozhuli',['$event'] ] ] ] ]}}" src="../../static/more.png" style="background:#EEEEEE;"></image>
+            </view>
+        </view>
+        <view class="zhuli-rens">
+            <view class="muqian">目前有<label class="_span" style="{{'color:'+theme_color}}">{{help_member.length}}</label>位朋友为您助力</view>
+            <view bindtap="__e" class="zhuli-span" data-event-opts="{{[ [ 'tap',[ ['ren'] ] ] ]}}">{{'查看'+prize_draw_name+'码'}}</view>
+        </view>
+    </view>
+    <view class="chouj" style="padding:80rpx;margin-top:30rpx;" wx:if="{{!yichou&&showdata.goods.type==0&&leftid==0}}">
+        <form bindsubmit="__e" data-event-opts="{{[ [ 'submit',[ [ 'ma',['$event'] ] ] ] ]}}" reportSubmit="true">
+            <button bindtap="__e" class="{{['chouj-but',daxiao?' bianda':'bianda2']}}" data-event-opts="{{[ [ 'tap',[ ['shouquan'] ] ] ]}}" formType="submit" style="{{'background:'+theme_color}}" wx:if="{{!yichou&&showdata.goods.type==0}}">
+                <view class="butnir" style="{{'background:'+theme_color}}">
+                    <view>观看视频</view>
+                    <view>{{'参与'+prize_draw_name}}</view>
+                </view>
+            </button>
+        </form>
+        <view class="phone-number" style="margin-top:40rpx;" wx:if="{{daily_prize_num>0}}">{{'今天参与'+prize_draw_name+''}}<label class="_span" style="{{'color:'+theme_color}}">{{member_prize_num}}</label>次，剩余<label class="_span" style="{{'color:'+theme_color}}" wx:if="{{daily_prize_num>0}}">{{''+daily_prize_num-member_prize_num+''}}</label>次</view>
+        <view class="phone-number" wx:if="{{daily_prize_num>0}}">每日送<label class="_span" style="{{'color:'+theme_color}}">{{daily_prize_num}}</label>{{'次'+prize_draw_name+'机会'}}</view>
+    </view>
+    <view class="chouj" wx:if="{{leftid==0}}">
+        <view class="c-title2" wx:if="{{showdata.goods.type==1&&luck_member.length>0}}">----中奖名单----</view>
+        <view class="c-title3" wx:if="{{showdata.goods.type==1&&luck_member.length>0}}">
+            <image mode src="{{luck_member[0].avatar}}"></image>
+        </view>
+        <view class="c-title4" wx:if="{{showdata.goods.type==1}}">{{luck_member[0].username}}</view>
+        <view bindtap="__e" class="chankanmore" data-event-opts="{{[ [ 'tap',[ ['chakanm'] ] ] ]}}" wx:if="{{showdata.goods.type==1&&luck_member.length>0}}">查看更多</view>
+        <view class="{{['chouj-rens',yichou?'topl':'']}}" wx:if="{{showdata.goods.type==0}}">{{'已有 '+showdata.goods.count+'人参与'}}<label bindtap="__e" class="_span" data-event-opts="{{[ [ 'tap',[ ['goma'] ] ] ]}}">查看全部</label>
+        </view>
+        <view class="chouj-renm" wx:if="{{showdata.goods.type==0}}">
+            <view class="ren" style="{{'background:'+theme_color}}" wx:for="{{member}}">
+                <image mode src="{{item.avatar}}"></image>
+            </view>
+            <view class="ren" style="{{'background:'+theme_color}}">{{showdata.goods.count}}</view>
+        </view>
+        <view bindtap="__e" class="zhuli-span" data-event-opts="{{[ [ 'tap',[ ['ren'] ] ] ]}}" style="margin-top:40rpx;" wx:if="{{yichou&&zhulitype==0}}">{{'查看我的'+prize_draw_name+'码'}}</view>
+        <button bindtap="__e" class="chouj-yaoq" data-event-opts="{{[ [ 'tap',[ [ 'showshare',['$event'] ] ] ] ]}}" style="{{'background:'+theme_color}}" wx:if="{{zhulitype==0&&yichou}}">{{detail_invite_name}}</button>
+        <view bindtap="__e" class="more" data-event-opts="{{[ [ 'tap',[ ['gomore'] ] ] ]}}" style="{{'background:'+theme_color}}">{{'更多'+prize_draw_name}}</view>
+    </view>
+    <view class="xqxq" wx:if="{{showdata.goods.content&&leftid==1}}">
+        <rich-text nodes="{{showdata.goods.content}}"></rich-text>
+    </view>
+    <view class="xqxq" wx:if="{{rule.length>0&&leftid==2}}">
+        <view wx:for="{{rule}}">{{''+item+''}}</view>
+    </view>
+    <view class="adzindex" style="width:94% !important;margin:0 auto;" wx:if="{{guanggaoid!=0}}">
+        <ad adTheme="white" adType="video" unitId="{{guanggaoid}}" wx:if="{{guanggaoid!=0}}"></ad>
+    </view>
+    <view class="hei" wx:if="{{showma||showren}}"></view>
+    <view style="height:80rpx;width:100%;" wx:if="{{showdata.goods.content&&dibushow}}"></view>
+    <view bindtap="__e" class="hei" data-event-opts="{{[ [ 'tap',[ [ 'showshare',['$event'] ] ] ] ]}}" wx:if="{{shareshow}}"></view>
+    <view class="fenxiang" wx:if="{{shareshow}}">
+        <button class="fenxitem" openType="share">
+            <image mode src="../../static/renwu3.png"></image>
+            <view class="fenxitem-text">分享给好友</view>
+        </button>
+        <view bindtap="__e" class="fenxitem" data-event-opts="{{[ [ 'tap',[ [ 'showhaibao',['$event'] ] ] ] ]}}">
+            <image mode src="../../static/haibao.png"></image>
+            <view class="fenxitem-text">生成海报</view>
+        </view>
+    </view>
+    <view class="bai" wx:if="{{showma}}">
+        <view bindtap="__e" class="close" data-event-opts="{{[ [ 'tap',[ ['closema'] ] ] ]}}">
+            <image mode src="../../static/close.png"></image>
+        </view>
+        <view class="bai-title">{{'您已成功参与'+prize_draw_name}}</view>
+        <view class="bai-ma">
+            <view class="bai-ma1">{{prize_draw_name+'码'}}</view>
+            <view class="bai-ma2">{{choujma}}</view>
+        </view>
+        <button bindtap="__e" class="yaoq" data-event-opts="{{[ [ 'tap',[ [ 'showshare',['$event'] ] ] ] ]}}">{{'邀请好友获得更多'+prize_draw_name+'码'}}</button>
+        <view class="tishi">{{prize_draw_name+'码越多 中奖概率越大'}}</view>
+        <image mode class="di" src="../../static/chouj.png"></image>
+        <view style="width:300px;margin:0 auto;margin-top:40rpx;" wx:if="{{guanggaoid3!=0}}">
+            <ad adTheme="white" adType="banner" unitId="{{guanggaoid3}}" wx:if="{{guanggaoid3!=0}}"></ad>
+        </view>
+    </view>
+    <view class="bairen" wx:if="{{showren}}">
+        <view class="showren-title">{{'全部'+prize_draw_name+'码'}}</view>
+        <scroll-view class="showren-scroll" scrollY="true">
+            <view class="showren-scro">
+                <text class="bule">{{mymember.lucky_code}}</text>
+                <text>观看视频</text>
+            </view>
+            <view class="showren-scro" wx:for="{{mymember1}}">
+                <text class="bule">{{item.lucky_code}}</text>
+                <text>分享好友</text>
+            </view>
+            <view class="showren-scro" wx:for="{{mymember2}}">
+                <text class="bule">{{item.lucky_code}}</text>
+                <text>分享好友</text>
+            </view>
+        </scroll-view>
+        <view bindtap="__e" class="guanbi" data-event-opts="{{[ [ 'tap',[ ['ren'] ] ] ]}}" style="{{'color:'+theme_color}}">关闭</view>
+    </view>
+</view>

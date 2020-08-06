@@ -1,0 +1,192 @@
+.xianzhi {
+    max-width: 200rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 28rpx;
+}
+
+.guan {
+    width: 35rpx;
+    height: 35rpx;
+    position: absolute;
+    right: 30rpx;
+    top: 30rpx;
+}
+
+.scro {
+    height: 580rpx;
+}
+
+.showshuom-title {
+    text-align: center;
+    font-size: 34rpx;
+    line-height: 34rpx;
+    color: #333;
+}
+
+.hei {
+    width: 100vh;
+    height: 100vh;
+    background: rgba(0,0,0,.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.ten {
+    margin-top: 20rpx;
+    font-size: 28rpx;
+    line-height: 44rpx;
+}
+
+.showshuom {
+    width: 640rpx;
+    height: 700rpx;
+    position: relative;
+    padding: 30rpx;
+    box-sizing: border-box;
+    background: #fff;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 20;
+    margin-top: -350rpx;
+    border-radius: 10rpx;
+    margin-left: -320rpx;
+}
+
+.num {
+    width: 125rpx;
+    color: #f74e31;
+}
+
+.qiyu-name {
+    width: 415rpx;
+    padding-left: 10rpx;
+    box-sizing: border-box;
+}
+
+.paim {
+    width: 105rpx;
+    text-align: center;
+}
+
+.qiyu {
+    width: 704rpx;
+    background: #fff;
+    margin: 0 auto;
+    border-radius: 10rpx;
+    box-sizing: border-box;
+    padding: 20rpx 0;
+    margin-top: 40rpx;
+}
+
+.qiyu-item {
+    height: 100rpx;
+    width: 100%;
+    display: flex;
+    font-size: 32rpx;
+    color: #333;
+    line-height: 100rpx;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.qiyu-toux {
+    width: 68rpx;
+    height: 68rpx;
+    border-radius: 50%;
+}
+
+.name {
+    color: #fff;
+    font-size: 30rpx;
+    width: 100%;
+    white-space: nowrap;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ots-o .ttu {
+    width: 101rpx!important;
+    height: 76rpx!important;
+}
+
+.ots-o .ttoux {
+    margin-top: 51rpx;
+}
+
+.ots-o {
+    width: 156rpx!important;
+    margin-top: 0rpx!important;
+}
+
+.ots {
+    display: flex;
+    box-sizing: border-box;
+    padding: 0 70rpx;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.ttu {
+    width: 84rpx;
+    height: 63rpx;
+    position: absolute;
+}
+
+.ttoux {
+    margin-top: 41rpx;
+}
+
+.ots-o .ttoux image {
+    width: 156rpx!important;
+    height: 156rpx!important;
+    border: 5rpx solid #ffd850!important;
+}
+
+.ttoux image {
+    border: #dcdcdc solid 4rpx;
+    width: 128rpx;
+    height: 128rpx;
+    border-radius: 50%;
+}
+
+.t {
+    width: 136rpx;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-top: 28rpx;
+}
+
+.shuom {
+    background: #fff;
+    color: #f63;
+    width: 225rpx;
+    height: 66rpx;
+    line-height: 66rpx;
+    box-sizing: border-box;
+    padding-left: 42rpx;
+    font-size: 30rpx;
+    position: absolute;
+    top: 20rpx;
+    left: 0;
+    border-top-right-radius: 66rpx;
+    border-bottom-right-radius: 66rpx;
+}
+
+.content {
+    box-sizing: border-box;
+    padding-top: 100rpx;
+    background: #f63;
+    min-height: 100vh;
+}

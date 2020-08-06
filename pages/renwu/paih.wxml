@@ -1,0 +1,53 @@
+<view class="content" style="{{'background:'+theme_color}}">
+    <view bindtap="__e" class="shuom" data-event-opts="{{[ [ 'tap',[ ['showthis'] ] ] ]}}" style="{{'color:'+theme_color}}">奖励说明</view>
+    <view bindtap="__e" class="hei" data-event-opts="{{[ [ 'tap',[ ['showthis'] ] ] ]}}" wx:if="{{that}}"></view>
+    <view class="showshuom" wx:if="{{that}}">
+        <image mode bindtap="__e" class="guan" data-event-opts="{{[ [ 'tap',[ ['showthis'] ] ] ]}}" src="../../static/guan.png"></image>
+        <view class="showshuom-title">奖励说明</view>
+        <scroll-view class="scro" scrollY="true">
+            <view class="ten">
+                <rich-text nodes="{{sign_rule}}"></rich-text>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="ots">
+        <view class="t" wx:if="{{showdata.length>=2}}">
+            <image mode class="ttu" src="../../static/bg2.png"></image>
+            <view class="ttoux">
+                <image mode src="{{showdata[1].member_info.avatar}}"></image>
+            </view>
+            <view class="name">{{showdata[1].member_info.username}}</view>
+            <view class="name">{{showdata[1].num}}</view>
+        </view>
+        <view class="t ots-o" wx:if="{{showdata.length>=1}}">
+            <image mode class="ttu" src="../../static/bg1.png"></image>
+            <view class="ttoux">
+                <image mode src="{{showdata[0].member_info.avatar}}"></image>
+            </view>
+            <view class="name">{{showdata[0].member_info.username}}</view>
+            <view class="name">{{showdata[0].num}}</view>
+        </view>
+        <view class="t" wx:if="{{showdata.length>=3}}">
+            <image mode class="ttu" src="../../static/bg3.png"></image>
+            <view class="ttoux">
+                <image mode src="{{showdata[2].member_info.avatar}}" style="border-color:#ffb155 !important;"></image>
+            </view>
+            <view class="name">{{showdata[2].member_info.username}}</view>
+            <view class="name">{{showdata[2].num}}</view>
+        </view>
+    </view>
+    <view class="qiyu" wx:if="{{showdata.length>=4}}">
+        <view class="qiyu-item" wx:if="{{index>2}}" wx:for="{{showdata}}">
+            <view class="paim">{{index+1}}</view>
+            <view class="qiyu-toux">
+                <image mode class="qiyu-toux" src="{{item.member_info.avatar}}"></image>
+            </view>
+            <view class="qiyu-name">
+                <view class="xianzhi">{{''+item.member_info.username+''}}</view>
+            </view>
+            <view class="num" style="{{'color:'+theme_color}}">{{item.num}}</view>
+        </view>
+    </view>
+    <view style="width:100%;height:100rpx;"></view>
+    <itab-bar bargain_is_open="{{bargain_is_open}}" bind:__l="__l" comment_plugin_state="{{comment_plugin_state}}" index="4" vueId="0b3f6772-1"></itab-bar>
+</view>

@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "领取",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "navigationBarTextStyle": "white",
+    "usingComponents": {
+        "w-picker": "/justother/w-picker/w-picker"
+    }
+}

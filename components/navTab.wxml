@@ -1,0 +1,15 @@
+<view class="navTabBox" style="{{'background:'+theme_color}}" wx:if="{{tabTitle.length>1}}">
+    <view class="{{['longTab',gonggaolist.length>0?'gaodu1':'']}}">
+        <scroll-view scrollWithAnimation scrollLeft="{{tabLeft}}" scrollX="true" style="white-space:nowrap;display:flex;">
+            <view bindtap="__e" class="{{['longItem',index===tabClick?'click':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'longClick',[index] ] ] ] ]}}" data-index="{{index}}" id="{{'id'+index}}" style="{{'width:'+isWidth+'px'}}" wx:for="{{tabTitle}}" wx:key="index">
+                <view class="{{['navtu',index===tabClick?'navtuactive':'']}}">
+                    <image mode class="{{['navtu',index===tabClick?'navtuactive':'']}}" src="{{item.logo}}"></image>
+                </view>
+                <view class="navtext">{{''+item.name+''}}</view>
+            </view>
+            <view class="underlineBox" style="{{'transform:translateX('+isLeft+'px);width:'+isWidth+'px'}}">
+                <view class="underline"></view>
+            </view>
+        </scroll-view>
+    </view>
+</view>

@@ -1,0 +1,177 @@
+.banner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+.content {
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding-bottom: 50rpx;
+}
+
+.flexb {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.header {
+    width: 100%;
+    height: 350rpx;
+    padding: 1rpx;
+    position: relative;
+}
+
+.guiz {
+    position: absolute;
+    right: 0rpx;
+    top: 30rpx;
+    padding: 18rpx 24rpx;
+    border-bottom-left-radius: 48rpx;
+    border-top-left-radius: 48rpx;
+    background-color: #9046e5;
+    font-size: 28rpx;
+    color: #fff;
+    z-index: 2;
+}
+
+.yingd {
+    position: absolute;
+    bottom: 30rpx;
+    left: 188rpx;
+    font-size: 30rpx;
+    color: #fff;
+    background-color: #391f9c;
+    text-align: center;
+    padding: 12rpx 48rpx;
+    border-radius: 36rpx;
+    z-index: 2;
+}
+
+.yingd text {
+    color: #fff605;
+    margin-left: 12rpx;
+}
+
+.unLottery {
+    position: fixed;
+    z-index: 2;
+    top: 0rpx;
+    width: 100%;
+    background-color: rgba(0,0,0,.5);
+    height: 100%;
+}
+
+.close {
+    z-index: 999;
+    font-weight: 700;
+    padding: 12rpx 0;
+    text-align: center;
+    font-size: 30rpx;
+    width: 100%;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 12rpx;
+    border-top: 1rpx solid #999;
+}
+
+.tang {
+    width: 480rpx;
+    height: 600rpx;
+    background-color: #fff;
+    margin: 40% auto 0;
+    border-radius: 30rpx;
+    position: relative;
+}
+
+.hdgz {
+    text-align: center;
+    font-size: 36rpx;
+    padding: 36rpx 0;
+    border-top-left-radius: 30rpx;
+    border-top-right-radius: 30rpx;
+}
+
+.box {
+    background-color: #fff;
+    margin: 30rpx;
+    border-radius: 18rpx;
+    margin-bottom: 0;
+}
+
+.box-img {
+    width: 240rpx;
+    height: 200rpx;
+    margin: 12rpx;
+    border-radius: 18rpx;
+}
+
+.box-img image {
+    width: 240rpx;
+    height: 200rpx;
+    border-radius: 18rpx;
+}
+
+.box-r {
+    width: 460rpx;
+    margin: 0 12rpx;
+}
+
+.box-name {
+    font-size: 30rpx;
+    font-weight: 700;
+    margin-bottom: 12rpx;
+}
+
+.box-price {
+    font-size: 28rpx;
+    color: #f67139;
+}
+
+.b-box {
+    margin: 12rpx 0;
+}
+
+.box-huoq {
+    font-size: 28rpx;
+    color: #999;
+}
+
+.yikan {
+    font-size: 28rpx;
+    color: #f67139;
+}
+
+.progress-box {
+    width: 50%;
+}
+
+.continue {
+    background-color: #2596fe;
+    font-size: 30rpx;
+    text-align: center;
+    color: #fff;
+    padding: 6rpx 0;
+    border-radius: 24rpx;
+    margin: 12rpx 12rpx 0;
+}
+
+.mianf {
+    background-color: red;
+    font-size: 30rpx;
+    text-align: center;
+    color: #fff;
+    padding: 6rpx 0;
+    border-radius: 24rpx;
+    margin: 48rpx 12rpx 0;
+}
+
+.guizjs {
+    font-size: 24rpx;
+    margin: 0 24rpx 24rpx;
+}

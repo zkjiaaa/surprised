@@ -1,0 +1,41 @@
+<view class="content">
+    <view class="header">
+        <view class="jiang">
+            <view class="jiangpq">Q币兑换区</view>
+            <view class="shengy">
+                <image mode src="../../static/index.png"></image>当前剩余：0 张</view>
+        </view>
+    </view>
+    <view>
+        <view class="box flexb">
+            <view class="img">
+                <image mode src="../../static/bg.jpg"></image>
+            </view>
+            <view class="name">
+                <view class="de">168Q币</view>
+                <view class="she">需要兑换券10张</view>
+            </view>
+            <view class="dui">兑换</view>
+        </view>
+        <view class="box flexb">
+            <view class="img">
+                <image mode src="../../static/bg.jpg"></image>
+            </view>
+            <view class="name">
+                <view class="de">29Q币</view>
+                <view class="she">需要兑换券3张</view>
+            </view>
+            <view class="dui">兑换</view>
+        </view>
+        <view class="box flexb">
+            <view class="img">
+                <image mode src="../../static/bg.jpg"></image>
+            </view>
+            <view class="name">
+                <view class="de">58Q币</view>
+                <view class="she">需要兑换券5张</view>
+            </view>
+            <view class="dui">兑换</view>
+        </view>
+    </view>
+</view>

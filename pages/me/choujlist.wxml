@@ -1,0 +1,16 @@
+<view>
+    <view class="title">
+        <view bindtap="__e" class="{{['title-item',1==leftid?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'bindtap',[0] ] ] ] ]}}" style="{{'color:'+theme_color}}">进行中</view>
+        <view bindtap="__e" class="{{['title-item',0==leftid?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'bindtap',[1] ] ] ] ]}}" style="{{'color:'+theme_color}}">已结束</view>
+    </view>
+    <view style="width:100%;height:138rpx;"></view>
+    <view class="nodata" wx:if="{{showdata.length<=0}}">暂时没有更多数据啦~</view>
+    <view bindtap="__e" class="card" data-event-opts="{{[ [ 'tap',[ [ 'goxq',['$0'],[ [ ['showdata','',index,'id'] ] ] ] ] ] ]}}" wx:for="{{showdata}}">
+        <image mode class="card-img" src="{{item.thumbs[0]}}"></image>
+        <view class="card-title">
+            <view class="card-title-item">{{item.title}}</view>
+            <view class="card-jianj" wx:if="{{item.open_type==0}}">{{item.end_time+' 自动公布结果'}}</view>
+            <view class="card-jianj" wx:if="{{item.open_type==1}}">{{prize_draw_name+'人数达到 '+item.max_member+' 人自动公布结果'}}</view>
+        </view>
+    </view>
+</view>
